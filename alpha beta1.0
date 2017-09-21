@@ -1,0 +1,31 @@
+for i in Fields
+	flields(i) = data
+
+data
+	int optimal carrots
+	int karrot toletance
+	int optimal salads
+	int salad tolerance
+	
+
+def checkStuff (Gamestate, iterations)
+		if iterations >0
+			for i in possible moves
+				Gamestate = Gamestate after i
+					if win
+						return (0,i)
+				Use simpleclient to determine opponents move
+				Gamestate = Gamestate after opponents Move
+				error = checkStuff (Gamestate, iterations-1)
+				if error < smallest_error 
+					smallest_error =error
+					best Move = i
+			retun (smallest_error, best_move)
+				
+		else
+			error = (W1*abs.wert(carrots-optimal_carrots)+W2*abs.wert(salads-optimal_salads))^2 -distance_traveled
+			if error < smallest_error 
+				smallest_error =error
+				best Move = i
+		return (smallest error, best_move)
+	
