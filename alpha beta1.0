@@ -13,7 +13,7 @@ def best (Gamestate, iterations)
 			for i in possible moves
 				Gamestate = Gamestate after i
 					if win
-						return (0,i)
+						return (-100000,i)
 				Use simpleclient to determine opponents move
 				Gamestate = Gamestate after opponents Move
 				error = checkStuff (Gamestate, iterations-1)
