@@ -1,5 +1,5 @@
 for i in fields
-	flields(i) = data
+	d_fields(i) = data
 
 data
 	int optimal carrots
