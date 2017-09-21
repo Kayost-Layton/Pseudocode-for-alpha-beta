@@ -1,4 +1,4 @@
-for i in Fields
+for i in fields
 	flields(i) = data
 
 data
