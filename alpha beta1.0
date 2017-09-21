@@ -8,7 +8,7 @@ data
 	int salad tolerance
 	
 
-def checkStuff (Gamestate, iterations)
+def best (Gamestate, iterations,-1)
 		if iterations >0
 			for i in possible moves
 				Gamestate = Gamestate after i
