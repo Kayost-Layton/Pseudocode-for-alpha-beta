@@ -19,7 +19,7 @@ def best (Gamestate, iterations)
 						return (-100000,i)
 				Use simpleclient to determine opponents move
 				Gamestate = Gamestate after opponents Move
-				error = checkStuff (Gamestate, iterations-1)
+				error = best (Gamestate, iterations-1)
 				if error < smallest_error 
 					smallest_error =error
 					best Move = i
