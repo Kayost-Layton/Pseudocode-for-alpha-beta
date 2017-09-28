@@ -1,0 +1,57 @@
+for i in fields
+	d_fields(i) = data
+
+data
+	int optimal carrots
+	int karrot toletance
+	int optimal salads
+	int salad tolerance
+	float W1
+	float W2
+	float W3
+	
+
+def best (Gamestate, iterations)
+	float error1
+	float error2 = 1000000
+	float error
+	move best_move
+	Gamestate Gamestate_clone = Gamestate
+	
+	
+		if abs.wert(carrots-optimal_carrots) > carrot_tolerance
+			carrot_error = abs.wert(carrots-optimal_carrots)-carrot tolerance
+		else
+			carrot-error = 0
+		
+		// error1 ist der error für das current_field
+		error1 = (W1*(carrot_error)+W2*(salads-optimal_salads)^2 -W3*distance_traveled
+		
+		
+		// error2 ist der error für den besten Zug vom current_field
+		if iterations >0
+			for i in possible moves
+				Gamestate_clone = Gamestate after i
+					if win
+						best_move = i
+						error2 = -1000000
+						break
+				Use simpleclient to determine opponents move
+				Gamestate = Gamestate_clone after opponents Move
+				error2_temp = best (Gamestate_clone, iterations-1)
+				if error2_temp < error2 
+					error2 =error2_temp
+					best_move = i
+		else 
+			best_move = any possible move
+			error2 = error1
+			
+			
+		// r beschreibt wie wichtig die Felder über die der Player geht sind
+		// r ist eine globale Variable, die der Genetische Algorithmus verändert	
+		// error beschreibt eine Kombination von error für das current_field und dem error von den möglichen Zügen von da
+		error = ((r)*error1 + (1-r)*error2) 	
+	
+				
+		return (error, best_move)
+	
