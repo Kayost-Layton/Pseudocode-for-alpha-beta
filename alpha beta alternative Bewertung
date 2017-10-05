@@ -4,11 +4,13 @@ for i in fields
 data
 	int optimal carrots
 	int karrot toletance
-	int optimal salads
-	int salad tolerance
+	float optimal salads
+	//int salad tolerance //wichtig?
+	// die Wn Variabelen global oder nicht?
 	float W1
 	float W2
 	float W3
+	float w4
 	
 
 def best (Gamestate, iterations)
@@ -19,13 +21,21 @@ def best (Gamestate, iterations)
 	Gamestate Gamestate_clone = Gamestate
 	
 	
-		if abs.wert(carrots-optimal_carrots) > carrot_tolerance
+		if abs.wert(carrots - optimal_carrots) > carrot_tolerance
 			carrot_error = abs.wert(carrots-optimal_carrots)-carrot tolerance
 		else
 			carrot-error = 0
+			
+		if salads-optimal_salads >0
+			salad_error = salads - optimal_salads
+			salad_bonus = 0
+		else 
+			salad_error = 0
+			salad_bonus = salads - optimal_salads
+			
 		
 		// error1 ist der error für das current_field
-		error1 = (W1*(carrot_error)+W2*(salads-optimal_salads)^2 -W3*distance_traveled
+		error1 = (W1*(carrot_error)+W2*(salad_error))^2 + W3*salad_bonus - W4*distance_traveled
 		
 		
 		// error2 ist der error für den besten Zug vom current_field
@@ -50,6 +60,7 @@ def best (Gamestate, iterations)
 		// r beschreibt wie wichtig die Felder über die der Player geht sind
 		// r ist eine globale Variable, die der Genetische Algorithmus verändert	
 		// error beschreibt eine Kombination von error für das current_field und dem error von den möglichen Zügen von da
+		
 		error = ((r)*error1 + (1-r)*error2) 	
 	
 				
