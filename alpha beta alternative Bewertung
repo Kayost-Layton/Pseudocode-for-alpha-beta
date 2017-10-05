@@ -15,7 +15,7 @@ data
 
 def best (Gamestate, iterations)
 	float error1
-	float error2
+	float error2 = 1000000
 	float error
 	move best_move
 	Gamestate Gamestate_clone = Gamestate
@@ -47,7 +47,7 @@ def best (Gamestate, iterations)
 						error2 = -1000000
 						break
 				Use simpleclient to determine opponents move
-				Gamestate = Gamestate_clone after opponents Move
+				Gamestate_clone = Gamestate_clone after opponents Move
 				error2_temp = best (Gamestate_clone, iterations-1)
 				if error2_temp < error2 
 					error2 =error2_temp
