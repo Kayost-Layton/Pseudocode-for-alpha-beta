@@ -2,10 +2,10 @@ for i in fields
 	d_fields(i) = data
 
 data
-	int optimal carrots
-	int karrot toletance
+	float optimal carrots
+	float karrot toletance
 	float optimal salads
-	//int salad tolerance //wichtig?
+	//float salad tolerance //wichtig?
 	// die Wn Variabelen global oder nicht?
 	float W1
 	float W2
@@ -15,7 +15,7 @@ data
 
 def best (Gamestate, iterations)
 	float error1
-	float error2 = 1000000
+	float error2
 	float error
 	move best_move
 	Gamestate Gamestate_clone = Gamestate
@@ -59,7 +59,7 @@ def best (Gamestate, iterations)
 			
 		// r beschreibt wie wichtig die Felder über die der Player geht sind
 		// r ist eine globale Variable, die der Genetische Algorithmus verändert	
-		// error beschreibt eine Kombination von error für das current_field und dem error von den möglichen Zügen von da
+		// error beschreibt eine Kombination von error für das current_field und dem error von den möglichen Zügen von diesem Feld
 		
 		error = ((r)*error1 + (1-r)*error2) 	
 	
