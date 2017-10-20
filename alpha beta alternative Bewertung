@@ -35,7 +35,7 @@ def best (Gamestate, iterations)
 			
 		
 		// error1 ist der error für das current_field
-		error1 = (W1*(carrot_error)+W2*(salad_error))^2 + W3*salad_bonus - W4*distance_traveled
+		error1 = (W1*(carrot_error)+W2*(salad_error))^2 + W3*salad_bonus
 		
 		
 		// error2 ist der error für den besten Zug vom current_field
@@ -48,7 +48,7 @@ def best (Gamestate, iterations)
 						break
 				Use simpleclient to determine opponents move
 				Gamestate_clone = Gamestate_clone after opponents Move
-				error2_temp = best (Gamestate_clone, iterations-1)
+				error2_temp = best (Gamestate_clone, iterations-1) - W4*distance_traveled
 				if error2_temp < error2 
 					error2 =error2_temp
 					best_move = i
